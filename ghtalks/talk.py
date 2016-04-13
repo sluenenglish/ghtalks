@@ -27,3 +27,12 @@ class Talk:
             out += "</ul>"
             out += "</div>"
         return out
+
+    def yml(self):
+        out = [{'title' : self.title,
+                'date': self.date,
+                'type' : self.file_type,
+                'path' : self.path
+                }]
+
+        return yaml.dump(out, default_flow_style=False) + '\n'

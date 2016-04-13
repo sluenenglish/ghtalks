@@ -43,8 +43,13 @@ class Index:
         self.out += """
 </body>
 """
+    def export_yml(self):
+        self.out = """"""
+        for talk in self.talks:
+            self.out += talk.yml()
 
     def write(self, output_file='index.html'):
         f = open(output_file, 'w')
         f.write(self.out)
         f.close()
+
